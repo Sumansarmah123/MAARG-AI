@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MAARG AI Icon Generator</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #0D0F14; color: #fff; }
+    canvas { border: 1px solid #333; margin: 10px; }
+    .container { display: flex; flex-wrap: wrap; gap: 20px; }
+  </style>
+</head>
+<body>
+  <h1>MAARG AI PWA Icons</h1>
+  <p>Right-click each icon and "Save image as..." with the filename shown below it.</p>
+  <div class="container" id="icons"></div>
+
+  <script>
+    const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+    const container = document.getElementById('icons');
+
+    sizes.forEach(size => {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+
+      // Background gradient
+      const gradient = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+      gradient.addColorStop(0, '#FF6B00');
+      gradient.addColorStop(1, '#FF8C00');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+
+      // Border
+      ctx.strokeStyle = '#FFB800';
+      ctx.lineWidth = size * 0.02;
+      ctx.strokeRect(0, 0, size, size);
+
+      // Text
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = `bold ${size * 0.35}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('⚡', size/2, size/2 - size * 0.05);
+      
+      ctx.font = `bold ${size * 0.15}px Arial`;
+      ctx.fillText('MAARG', size/2, size/2 + size * 0.25);
+
+      // Add to page
+      const wrapper = document.createElement('div');
+      wrapper.style.textAlign = 'center';
+      wrapper.appendChild(canvas);
+      const label = document.createElement('div');
+      label.textContent = `icon-${size}x${size}.png`;
+      label.style.marginTop = '5px';
+      label.style.fontSize = '12px';
+      label.style.color = '#6B7494';
+      wrapper.appendChild(label);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

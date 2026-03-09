@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAARG AI - Offline</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(180deg, #0D0F14 0%, #111520 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      text-align: center;
+      max-width: 400px;
+    }
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+    h1 {
+      font-size: 32px;
+      color: #FF6B00;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+      color: #6B7494;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .btn {
+      background: #FF6B00;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .btn:active {
+      transform: scale(0.96);
+    }
+    .features {
+      margin-top: 32px;
+      padding: 20px;
+      background: rgba(28, 32, 48, 0.5);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #6B7494;
+    }
+    .feature:last-child {
+      margin-bottom: 0;
+    }
+    .feature-icon {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📡</div>
+    <h1>You're Offline</h1>
+    <p>No internet connection detected. Please check your network and try again.</p>
+    <button class="btn" onclick="window.location.reload()">↻ Retry Connection</button>
+    
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        <span>MAARG AI works best with an active internet connection</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🗺️</span>
+        <span>Real-time maps and driver tracking require connectivity</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🤖</span>
+        <span>AI predictions need network access</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
